@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You ❤️</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255,255,255,0.94);
+      border-radius: 26px;
+      padding: 28px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+      animation: fadeIn 1s ease;
+      z-index: 2;
+    }
+
+    h2 {
+      color: #c2185b;
+      margin-bottom: 12px;
+    }
+
+    .top-msg, .bottom-msg {
+      font-size: 15px;
+      color: #333;
+      margin: 14px 0;
+      line-height: 1.6;
+    }
+
+    iframe {
+      width: 100%;
+      height: 240px;
+      border-radius: 18px;
+      border: none;
+      margin: 16px 0;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 18px;
+      animation: rise 6s linear infinite;
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    @keyframes rise {
+      from { transform: translateY(0); opacity: 0; }
+      10% { opacity: 0.8; }
+      to { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>Just For You 💕</h2>
+
+    <div class="top-msg">
+      Every heartbeat of mine has your name written on it.
+    </div>
+
+    <!-- Google Drive Embedded Video -->
+    <iframe
+      src="https://drive.google.com/file/d/1UkWDteTJjNhiKaRWsLHlT2R8qXZhzSFi/preview"
+      allow="autoplay">
+    </iframe>
+
+    <div class="bottom-msg">
+      No matter where life takes us, remember this —  
+      you will always be my favorite part of every day 🌹
+    </div>
+  </div>
+
+  <script>
+    const hearts = ['❤️','💗','💕','💖'];
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }, 400);
+  </script>
+
+</body>
+</html>

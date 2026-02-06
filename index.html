@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Rose Day Inshu❤️</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.9);
+      width: 90%;
+      max-width: 420px;
+      border-radius: 24px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      animation: fadeIn 1s ease;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #c2185b;
+      font-size: 32px;
+    }
+
+    .rose {
+      font-size: 64px;
+      margin: 20px 0;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    p {
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    button {
+      background: linear-gradient(135deg, #e91e63, #c2185b);
+      border: none;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(233,30,99,0.35);
+      margin-top: 10px;
+    }
+
+    .hidden-message {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .signature {
+      margin-top: 10px;
+      font-style: italic;
+      color: #c2185b;
+      font-size: 14px;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 18px;
+      animation: rise 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes rise {
+      from { transform: translateY(0); opacity: 0; }
+      10% { opacity: 0.7; }
+      to { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Happy Rose Day Inshu</h1>
+    <div class="rose">🌹</div>
+
+    <p>
+      This rose isn’t just a flower.  
+      It’s a promise — of smiles, care, and moments I want to share with you and the love u for life 💗
+    </p>
+
+    <button onclick="revealMessage()">Click here ❤️</button>
+
+    <div class="hidden-message" id="message">
+      You make ordinary days feel magical.  
+      Your smile is my favorite view, and your presence is my peace and ur voice is my favorite..
+      <div class="signature">— Always thinking of you</div>
+
+      <br>
+      <button onclick="goForYou()">For You 💗</button>
+    </div>
+  </div>
+
+  <script>
+    function revealMessage() {
+      document.getElementById('message').style.display = 'block';
+    }
+
+    function goForYou() {
+      window.location.href = 'for-you.html';
+    }
+
+    const hearts = ['❤️','💗','💕','💖'];
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = hearts[Math.floor(Math.random()*hearts.length)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }, 600);
+  </script>
+
+</body>
+</html>
